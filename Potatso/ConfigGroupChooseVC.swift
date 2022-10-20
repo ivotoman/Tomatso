@@ -12,6 +12,7 @@ import PotatsoModel
 import RealmSwift
 import Realm
 import PotatsoLibrary
+import UIKit
 
 private let kGroupCellIdentifier = "group"
 
@@ -57,7 +58,10 @@ class ConfigGroupChooseWindow: UIWindow {
     override init(frame: CGRect) {
         super.init(frame: frame)
         addSubview(chooseVC.view)
-        NotificationCenter.default.addObserver(self, selector: #selector(ConfigGroupChooseWindow.onStatusBarFrameChange), name: NSNotification.Name.UIApplicationDidChangeStatusBarFrame, object: nil)
+        
+        
+//        TODO: yangyudong
+//        NotificationCenter.default.addObserver(self, selector: #selector(ConfigGroupChooseWindow.onStatusBarFrameChange), name: NSNotification.Name.didChangeStatusBarFrameNotification, object: nil)
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -163,11 +167,11 @@ class ConfigGroupChooseVC: UIViewController, UITableViewDataSource, UITableViewD
         return groups.count > 1
     }
 
-    func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCellEditingStyle {
+    func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
         return .delete
     }
 
-    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             let item: ConfigurationGroup
             guard indexPath.row < groups.count else {

@@ -26,7 +26,13 @@ open class DBUtils {
         if setModified {
             object.setModified()
         }
-        mRealm.add(object, update: update)
+        if (update) {
+            mRealm.add(object, update: .all)
+        }
+        else {
+            mRealm.add(object, update: .error)
+        }
+        
         try mRealm.commitWrite()
     }
 
@@ -38,7 +44,7 @@ open class DBUtils {
                 $0.setModified()
             }
         })
-        mRealm.add(objects, update: update)
+        mRealm.add(objects, update: update ? .all : .error)
         try mRealm.commitWrite()
     }
 

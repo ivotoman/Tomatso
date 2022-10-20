@@ -1,6 +1,6 @@
 source 'https://github.com/CocoaPods/Specs.git'
 
-platform :ios, '9.0'
+platform :ios, '11.0'
 use_frameworks!
 
 def library
@@ -19,7 +19,7 @@ def socket
 end
 
 def model
-    pod 'RealmSwift'
+  pod 'RealmSwift', '~> 4.4.1'
 end
 
 target "Potatso" do

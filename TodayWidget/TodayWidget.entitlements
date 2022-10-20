@@ -10,11 +10,11 @@
 	</array>
 	<key>com.apple.security.application-groups</key>
 	<array>
-		<string>group.com.wxt.Ladder</string>
+		<string>group.sg.linkv.vpn</string>
 	</array>
 	<key>keychain-access-groups</key>
 	<array>
-		<string>$(AppIdentifierPrefix)com.wxt.Ladder</string>
+		<string>$(AppIdentifierPrefix)sg.linkv.vpn</string>
 	</array>
 </dict>
 </plist>
