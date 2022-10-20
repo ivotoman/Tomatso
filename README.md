@@ -4,8 +4,7 @@
 
 ## Potatso_swift5
 # Potatso compiled with swift5 
-# test on xcode 10.2.1 11.2.1 
-# test on macos 10.14.5 10.15.1
+# test on xcode 14.0
 
 ## Important
 
