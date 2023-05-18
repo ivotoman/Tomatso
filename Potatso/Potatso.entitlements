@@ -20,11 +20,11 @@
 	</array>
 	<key>com.apple.security.application-groups</key>
 	<array>
-		<string>group.sg.linkv.vpn</string>
+		<string>group.com.stary.companyfish</string>
 	</array>
 	<key>keychain-access-groups</key>
 	<array>
-		<string>$(AppIdentifierPrefix)sg.linkv.vpn</string>
+		<string>$(AppIdentifierPrefix)com.stary.companyfish</string>
 	</array>
 </dict>
 </plist>

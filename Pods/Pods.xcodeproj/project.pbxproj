@@ -4545,7 +4545,7 @@
 				LastUpgradeCheck = 1240;
 				TargetAttributes = {
 					E56E80821D169C98E99A62EBCBC60B2C = {
-						DevelopmentTeam = 67A85TH4HV;
+						DevelopmentTeam = 46U4VFLN24;
 					};
 				};
 			};
@@ -6305,10 +6305,11 @@
 			baseConfigurationReference = 875D66F7C1C5FB17BB6B4596977D59C1 /* Appirater.release.xcconfig */;
 			buildSettings = {
 				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/Appirater";
-				DEVELOPMENT_TEAM = 67A85TH4HV;
+				DEVELOPMENT_TEAM = 46U4VFLN24;
 				IBSC_MODULE = Appirater;
 				INFOPLIST_FILE = "Target Support Files/Appirater/ResourceBundle-Appirater-Appirater-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.stary.companyfish;
 				PRODUCT_NAME = Appirater;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
@@ -7222,10 +7223,11 @@
 			baseConfigurationReference = CDBB6ED2A97C70A82B070E58C50716BD /* Appirater.debug.xcconfig */;
 			buildSettings = {
 				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/Appirater";
-				DEVELOPMENT_TEAM = 67A85TH4HV;
+				DEVELOPMENT_TEAM = 46U4VFLN24;
 				IBSC_MODULE = Appirater;
 				INFOPLIST_FILE = "Target Support Files/Appirater/ResourceBundle-Appirater-Appirater-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.stary.companyfish;
 				PRODUCT_NAME = Appirater;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
