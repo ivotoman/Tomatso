@@ -218,6 +218,7 @@
 		B8F7AE3E1D5F178A005CA41E /* CloudSetManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F7AE3D1D5F178A005CA41E /* CloudSetManager.swift */; };
 		BEC06AF748B92B7443F82556 /* Pods_PotatsoLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDF9F2A6320F1AC7B894EFB9 /* Pods_PotatsoLibrary.framework */; };
 		D9840AAFF707D5FEE15E786F /* Pods_Potatso.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6A90249DDE27A9D618C3640 /* Pods_Potatso.framework */; };
+		DAFCA5F82A16422500E7A373 /* Whitelist.m in Sources */ = {isa = PBXBuildFile; fileRef = DAFCA5F72A16422500E7A373 /* Whitelist.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -916,6 +917,8 @@
 		C6A90249DDE27A9D618C3640 /* Pods_Potatso.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Potatso.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C87F5CD87CD25ABAAD4B68EC /* Pods-Potatso.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Potatso.release.xcconfig"; path = "Target Support Files/Pods-Potatso/Pods-Potatso.release.xcconfig"; sourceTree = "<group>"; };
 		CDF9F2A6320F1AC7B894EFB9 /* Pods_PotatsoLibrary.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PotatsoLibrary.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DAFCA5F72A16422500E7A373 /* Whitelist.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Whitelist.m; sourceTree = "<group>"; };
+		DAFCA5FB2A16423100E7A373 /* Whitelist.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Whitelist.h; sourceTree = "<group>"; };
 		DBA0F5ED794D8E9E7D42AD50 /* Pods-TodayWidget.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TodayWidget.release.xcconfig"; path = "Target Support Files/Pods-TodayWidget/Pods-TodayWidget.release.xcconfig"; sourceTree = "<group>"; };
 		DD33A4FF6B8E224B4FF4A210 /* Pods_PotatsoModel.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PotatsoModel.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2550FC545818CB214BF11E7 /* Pods-PacketTunnel.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PacketTunnel.debug.xcconfig"; path = "Target Support Files/Pods-PacketTunnel/Pods-PacketTunnel.debug.xcconfig"; sourceTree = "<group>"; };
@@ -1200,6 +1203,8 @@
 				B86B08E31D17F84900613014 /* ShadowPath.xcodeproj */,
 				9B8706011C1D788F00651424 /* Info.plist */,
 				9B8705FC1C1D788F00651424 /* Supporting Files */,
+				DAFCA5F72A16422500E7A373 /* Whitelist.m */,
+				DAFCA5FB2A16423100E7A373 /* Whitelist.h */,
 			);
 			path = PacketTunnel;
 			sourceTree = "<group>";
@@ -2975,6 +2980,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B8EAC5941D40BF310046963C /* TunnelError.m in Sources */,
+				DAFCA5F82A16422500E7A373 /* Whitelist.m in Sources */,
 				9B2D8C8B1C7C3F5B00CC65B3 /* ProxyManager.m in Sources */,
 				9B8706001C1D788F00651424 /* PacketTunnelProvider.m in Sources */,
 				9B87060B1C1DBCCD00651424 /* dns.m in Sources */,

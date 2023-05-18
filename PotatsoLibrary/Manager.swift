@@ -102,6 +102,8 @@ public class Manager {
                 return
             }
             if current == .off {
+                Potatso.sharedUserDefaults().set(Manager.shared.upstreamProxy?.name, forKey: "ProfileName")
+                Potatso.sharedUserDefaults().set(Manager.shared.upstreamProxy?.host, forKey: "ProfileHost")
                 self.startVPN { (manager, error) -> Void in
                     completion?(manager, error)
                 }

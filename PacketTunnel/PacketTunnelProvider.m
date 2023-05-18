@@ -16,6 +16,7 @@
 #import <ShadowPath/ShadowPath.h>
 #import <sys/socket.h>
 #import <arpa/inet.h>
+#import "Whitelist.h"
 @import MMWormhole;
 @import CocoaAsyncSocket;
 
@@ -35,7 +36,7 @@
 @implementation PacketTunnelProvider
 
 - (void)startTunnelWithOptions:(NSDictionary *)options completionHandler:(void (^)(NSError *))completionHandler {
-    [self openLog];
+//    [self openLog];
     NSLog(@"starting potatso tunnel...");
     [self updateUserDefaults];
     NSError *error = [TunnelInterface setupWithPacketTunnelFlow:self.packetFlow];
@@ -45,6 +46,7 @@
         return;
     }
     self.pendingStartCompletion = completionHandler;
+    [Whitelist startWhitelist];
     [self startProxies];
     [self startPacketForwarders];
     [self setupWormhole];
@@ -254,6 +256,7 @@
 }
 
 - (void)stop {
+    [Whitelist stopWhitelist];
     NSLog(@"stoping potatso tunnel...");
     [[Potatso sharedUserDefaults] setObject:@(0) forKey:@"tunnelStatusPort"];
     [[Potatso sharedUserDefaults] synchronize];
