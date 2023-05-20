@@ -2320,7 +2320,7 @@
 				TargetAttributes = {
 					9B07D6AF1CB7A6A900182C1B = {
 						CreatedOnToolsVersion = 7.3;
-						DevelopmentTeam = 9V27NZE749;
+						DevelopmentTeam = 46U4VFLN24;
 					};
 					9B0CFA0A1C1C0B1A007BD7C6 = {
 						CreatedOnToolsVersion = 7.2;
@@ -2398,25 +2398,25 @@
 					};
 					9B9B15BC1C21595B000B6541 = {
 						CreatedOnToolsVersion = 7.2;
-						DevelopmentTeam = 9V27NZE749;
+						DevelopmentTeam = 46U4VFLN24;
 						LastSwiftMigration = 0820;
 						ProvisioningStyle = Automatic;
 					};
 					9BC6001C1CB2921C00E5EA61 = {
 						CreatedOnToolsVersion = 7.3;
-						DevelopmentTeam = 9V27NZE749;
+						DevelopmentTeam = 46U4VFLN24;
 						LastSwiftMigration = 0820;
 						ProvisioningStyle = Automatic;
 					};
 					9BC6FFE91CB28B4B00E5EA61 = {
 						CreatedOnToolsVersion = 7.3;
-						DevelopmentTeam = 9V27NZE749;
+						DevelopmentTeam = 46U4VFLN24;
 						LastSwiftMigration = 0820;
 						ProvisioningStyle = Automatic;
 					};
 					9BDA625A1CAE2576007F2581 = {
 						CreatedOnToolsVersion = 7.3;
-						DevelopmentTeam = 9V27NZE749;
+						DevelopmentTeam = 46U4VFLN24;
 						LastSwiftMigration = 0820;
 						ProvisioningStyle = Automatic;
 					};
@@ -3180,7 +3180,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				CLANG_ANALYZER_NONNULL = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEVELOPMENT_TEAM = 9V27NZE749;
+				DEVELOPMENT_TEAM = 46U4VFLN24;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/PotatsoLibrary",
@@ -3188,7 +3188,7 @@
 				INFOPLIST_FILE = PotatsoLibraryTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = io.wasin.PotatsoLibraryTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.stary.companyfish.librarytest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 			};
@@ -3201,7 +3201,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				CLANG_ANALYZER_NONNULL = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = 9V27NZE749;
+				DEVELOPMENT_TEAM = 46U4VFLN24;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/PotatsoLibrary",
@@ -3209,7 +3209,7 @@
 				INFOPLIST_FILE = PotatsoLibraryTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = io.wasin.PotatsoLibraryTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.stary.companyfish.librarytest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 			};
@@ -3404,7 +3404,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = PotatsoTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = io.wasin.PotatsoTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.stary.companyfish.test;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Potatso.app/Potatso";
@@ -3418,7 +3418,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = PotatsoTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = io.wasin.PotatsoTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.stary.companyfish;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Potatso.app/Potatso";
@@ -3444,7 +3444,7 @@
 				INFOPLIST_FILE = TodayWidget/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.stary.companyfish;
+				PRODUCT_BUNDLE_IDENTIFIER = com.stary.companyfish.widget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -3471,7 +3471,7 @@
 				INFOPLIST_FILE = TodayWidget/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.stary.companyfish;
+				PRODUCT_BUNDLE_IDENTIFIER = com.stary.companyfish.widget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -3518,7 +3518,7 @@
 					"$(PROJECT_DIR)/PacketTunnel/Shadowsocks/libsodium-ios/lib",
 					"$(PROJECT_DIR)/PacketTunnel",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.stary.companyfish;
+				PRODUCT_BUNDLE_IDENTIFIER = com.stary.companyfish.packettunnel;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -3562,7 +3562,7 @@
 					"$(PROJECT_DIR)/PacketTunnel/Shadowsocks/libsodium-ios/lib",
 					"$(PROJECT_DIR)/PacketTunnel",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.stary.companyfish;
+				PRODUCT_BUNDLE_IDENTIFIER = com.stary.companyfish.packettunnel;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -3582,7 +3582,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 121;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = 9V27NZE749;
+				DEVELOPMENT_TEAM = 46U4VFLN24;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 121;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -3596,7 +3596,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "";
-				PRODUCT_BUNDLE_IDENTIFIER = com.wxt.ss.PotatsoLibrary;
+				PRODUCT_BUNDLE_IDENTIFIER = com.stary.companyfish.library;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
@@ -3619,7 +3619,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 121;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = 9V27NZE749;
+				DEVELOPMENT_TEAM = 46U4VFLN24;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 121;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -3633,7 +3633,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "";
-				PRODUCT_BUNDLE_IDENTIFIER = com.wxt.ss.PotatsoLibrary;
+				PRODUCT_BUNDLE_IDENTIFIER = com.stary.companyfish.library;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
@@ -3656,7 +3656,7 @@
 				CURRENT_PROJECT_VERSION = 121;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = 9V27NZE749;
+				DEVELOPMENT_TEAM = 46U4VFLN24;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 121;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -3687,7 +3687,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 121;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = 9V27NZE749;
+				DEVELOPMENT_TEAM = 46U4VFLN24;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 121;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -3719,7 +3719,7 @@
 				CURRENT_PROJECT_VERSION = 121;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = 9V27NZE749;
+				DEVELOPMENT_TEAM = 46U4VFLN24;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 121;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -3755,7 +3755,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 121;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = 9V27NZE749;
+				DEVELOPMENT_TEAM = 46U4VFLN24;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 121;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -3790,7 +3790,7 @@
 				CURRENT_PROJECT_VERSION = 121;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = 9V27NZE749;
+				DEVELOPMENT_TEAM = 46U4VFLN24;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 121;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -3834,7 +3834,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 121;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = 9V27NZE749;
+				DEVELOPMENT_TEAM = 46U4VFLN24;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 121;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";

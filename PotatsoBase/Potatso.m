@@ -14,7 +14,7 @@
     // reverted back
     // very curious why grabbing value from Info.plist will result in cannot connect to VPN all the time
     // it needs to be fixed like this as always
-    return @"group.sg.linkv.vpn";
+    return @"group.com.stary.companyfish";
 }
 
 + (NSURL *)sharedUrl {
