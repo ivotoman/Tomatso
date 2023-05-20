@@ -182,9 +182,12 @@ class HomeVC: FormViewController, UINavigationControllerDelegate, HomePresenterP
     // MARK: - Private Actions
 
     @objc func handleConnectButtonPressed() {
+        print("[What's Wrong With You]", "button clicked")
         if status == .on {
+            print("[What's Wrong With You]", "status is on")
             status = .disconnecting
         }else {
+            print("[What's Wrong With You]", "status is off")
             status = .connecting
         }
         presenter.switchVPN()

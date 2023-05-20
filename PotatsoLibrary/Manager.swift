@@ -93,7 +93,9 @@ public class Manager {
     }
 
     public func switchVPN(_ completion: ((NETunnelProviderManager?, Error?) -> Void)? = nil) {
+        print("[What's Wrong With You]", "Manager switchVPN start to run")
         loadProviderManager { [unowned self] (manager) in
+            print("[What's Wrong With You]", "Manager loadProviderManager completion start run")
             if let manager = manager {
                 self.updateVPNStatus(manager)
             }
@@ -104,12 +106,15 @@ public class Manager {
             if current == .off {
                 Potatso.sharedUserDefaults().set(Manager.shared.upstreamProxy?.name, forKey: "ProfileName")
                 Potatso.sharedUserDefaults().set(Manager.shared.upstreamProxy?.host, forKey: "ProfileHost")
+                print("[What's Wrong With You]", "ProfileName:", Manager.shared.upstreamProxy?.name, "ProfileHost:", Manager.shared.upstreamProxy?.host)
                 self.startVPN { (manager, error) -> Void in
+                    print("[What's Wrong With You]","startVPN completion start", "error:\(error)")
                     completion?(manager, error)
                 }
             }else {
                 self.stopVPN()
                 completion?(nil, nil)
+                print("[What's Wrong With You]", "current != .off then stopVPN and completion")
             }
 
         }
@@ -388,15 +393,18 @@ extension Manager {
     }
     
     fileprivate func startVPNWithOptions(_ options: [String : NSObject]?, complete: ((NETunnelProviderManager?, Error?) -> Void)? = nil) {
+        print("[What's Wrong With You]", "startVPNWithOptions start")
         // regenerate config files
         do {
             try Manager.shared.regenerateConfigFiles()
         }catch {
             complete?(nil, error)
+            print("[What's Wrong With You]", "regenerate config file error: \(error)")
             return
         }
         // Load provider
         loadAndCreateProviderManager { (manager, error) -> Void in
+            print("[What's Wrong With You]", "loadAndCreateProviderManager completion start, error:\(error)")
             if let error = error {
                 complete?(nil, error)
             }else{
@@ -406,7 +414,9 @@ extension Manager {
                 }
                 if manager.connection.status == .disconnected || manager.connection.status == .invalid {
                     do {
+                        print("[What's Wrong With You]", "before startVPNTunnel execute")
                         try manager.connection.startVPNTunnel(options: options)
+                        print("[What's Wrong With You]", "after startVPNTunnel execute")
                         self.addVPNStatusObserver()
                         complete?(manager, nil)
                     }catch {
@@ -447,7 +457,9 @@ extension Manager {
     }
     
     fileprivate func loadAndCreateProviderManager(_ complete: @escaping (NETunnelProviderManager?, Error?) -> Void ) {
+        print("[What's Wrong With You]", "loadAndCreateProviderManager start")
         NETunnelProviderManager.loadAllFromPreferences { [unowned self] (managers, error) -> Void in
+            print("[What's Wrong With You]", "loadAndCreateProviderManager completion, error: \(error)")
             if let managers = managers {
                 let manager: NETunnelProviderManager
                 if managers.count > 0 {

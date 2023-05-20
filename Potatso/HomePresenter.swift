@@ -45,8 +45,11 @@ class HomePresenter: NSObject {
     // MARK: - Actions
 
     func switchVPN() {
+        print("[What's Wrong With You]", "HomePresenter switchVPN start to run")
         VPN.switchVPN(group) { [unowned self] (error) in
+            print("[What's Wrong With You]", "HomePresenter switchVPN completion start to run")
             if let error = error {
+                print("[What's Wrong With You]", "HomePresenter switchVPN completion error handler execute")
                 Alert.show(self.vc, message: "\("Fail to switch VPN.".localized()) (\(error))")
             }
         }
