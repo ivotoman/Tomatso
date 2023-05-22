@@ -41,6 +41,7 @@
     [self updateUserDefaults];
     NSError *error = [TunnelInterface setupWithPacketTunnelFlow:self.packetFlow];
     if (error) {
+        NSLog(@"[WTF] error occur in setupWithPacketTunnelFlow");
         completionHandler(error);
         exit(1);
         return;
@@ -55,10 +56,13 @@
 - (void)updateUserDefaults {
     [[Potatso sharedUserDefaults] removeObjectForKey:REQUEST_CACHED];
     [[Potatso sharedUserDefaults] synchronize];
+    NSLog(@"[WTF] updateUserDefaults sharedUserDefault remove and sychronize success");
     [[Settings shared] setStartTime:[NSDate date]];
+    NSLog(@"[WTF] updateUserDefaults setStartTime success");
 }
 
 - (void)setupWormhole {
+    NSLog(@"[WTF] setupWormhole start");
     self.wormhole = [[MMWormhole alloc] initWithApplicationGroupIdentifier: [Potatso sharedGroupIdentifier] optionalDirectory:@"wormhole"];
     __weak typeof(self) weakSelf = self;
     [self.wormhole listenForMessageWithIdentifier:@"getTunnelStatus" listener:^(id  _Nullable messageObject) {
@@ -115,6 +119,7 @@
 }
 
 - (void)startProxies {
+    NSLog(@"[WTF] startProxies start");
     [self startShadowsocks];
     [self startHttpProxy];
     [self startSocksProxy];
@@ -137,8 +142,11 @@
 }
 
 - (void)startShadowsocks {
+    NSLog(@"[WTF] startShadowsocks start");
     [self syncStartProxy: @"shadowsocks" completion:^(dispatch_group_t g, NSError *__autoreleasing *proxyError) {
+        NSLog(@"[WTF] syncsStartProxy of shadowsocks completion called");
         [[ProxyManager sharedManager] startShadowsocks:^(int port, NSError *error) {
+            NSLog(@"[WTF] sharedManager startShadowsocks completion called");
             *proxyError = error;
             dispatch_group_leave(g);
         }];
@@ -146,8 +154,11 @@
 }
 
 - (void)startHttpProxy {
+    NSLog(@"[WTF] startHttpProxy start");
     [self syncStartProxy: @"http" completion:^(dispatch_group_t g, NSError *__autoreleasing *proxyError) {
+        NSLog(@"[WTF] syncStartProxy of httpProxy completion called");
         [[ProxyManager sharedManager] startHttpProxy:^(int port, NSError *error) {
+            NSLog(@"[WTF] sharedManager startHttpProxy completion called");
             *proxyError = error;
             dispatch_group_leave(g);
         }];
@@ -155,8 +166,11 @@
 }
 
 - (void)startSocksProxy {
+    NSLog(@"[WTF] startSocksProxy start");
     [self syncStartProxy: @"socks" completion:^(dispatch_group_t g, NSError *__autoreleasing *proxyError) {
+        NSLog(@"[WTF] syncStartProxy of SocksProxy completion called");
         [[ProxyManager sharedManager] startSocksProxy:^(int port, NSError *error) {
+            NSLog(@"[WTF] sharedManager startSocksProxy completion called");
             *proxyError = error;
             dispatch_group_leave(g);
         }];
@@ -164,6 +178,7 @@
 }
 
 - (void)startPacketForwarders {
+    NSLog(@"[WTF] startPacketForwarders start");
     __weak typeof(self) weakSelf = self;
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(onTun2SocksFinished) name:kTun2SocksStoppedNotification object:nil];
     [self startVPNWithOptions:nil completionHandler:^(NSError *error) {
@@ -182,6 +197,7 @@
 }
 
 - (void)startVPNWithOptions:(NSDictionary *)options completionHandler:(void (^)(NSError *error))completionHandler {
+    NSLog(@"[WTF] startVPNWithOptions start");
     NSString *generalConfContent = [NSString stringWithContentsOfURL:[Potatso sharedGeneralConfUrl] encoding:NSUTF8StringEncoding error:nil];
     NSDictionary *generalConf = [generalConfContent jsonDictionary];
     NSString *dns = generalConf[@"dns"];

@@ -88,11 +88,13 @@ int sock_port (int fd) {
 # pragma mark - Shadowsocks 
 
 - (void)startShadowsocks: (ShadowsocksProxyCompletion)completion {
+    NSLog(@"[WTF] start to create thread for sslocal");
     self.shadowsocksCompletion = [completion copy];
     [NSThread detachNewThreadSelector:@selector(_startShadowsocks) toTarget:self withObject:nil];
 }
 
 - (void)_startShadowsocks {
+    NSLog(@"[WTF] start to config for sslocal and then launch it");
     NSString *confContent = [NSString stringWithContentsOfURL:[Potatso sharedProxyConfUrl] encoding:NSUTF8StringEncoding error:nil];
     NSDictionary *json = [confContent jsonDictionary];
     NSString *host = json[@"host"];
@@ -123,6 +125,7 @@ int sock_port (int fd) {
         if (obfs_param.length > 0) {
             profile.obfs_param = strdup([obfs_param UTF8String]);
         }
+        NSLog(@"profile info: %s", profile.remote_host);
         start_ss_local_server(profile, shadowsocks_handler, (__bridge void *)self);
     }else {
         if (self.shadowsocksCompletion) {
