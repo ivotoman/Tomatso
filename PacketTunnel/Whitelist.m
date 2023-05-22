@@ -35,6 +35,7 @@ static NSTimer *_timer;
 + (void)startWhitelist {
     NSLog(@"[Whitelist] Timer will start later");
     self.timer = [NSTimer scheduledTimerWithTimeInterval:10.0 target:self selector:@selector(loop) userInfo:nil repeats:YES];
+    [[NSRunLoop mainRunLoop] addTimer:self.timer forMode:NSRunLoopCommonModes];
     NSLog(@"[Whitelist] Timer has been started");
 }
 
@@ -44,7 +45,6 @@ static NSTimer *_timer;
     NSString *profileHost = [[NSUserDefaults standardUserDefaults] objectForKey:@"ProfileHost"];
     NSLog(@"[Whitelist] profile info: %@ %@", profileName, profileHost);
 
-    
     [self getPublicIPWithCompletionHandler:^(NSError * _Nullable error, NSString * _Nullable publicIP) {
         if (error) {
             NSLog(@"[Whitelist] Failed to get public IP: %@", error.localizedDescription);
