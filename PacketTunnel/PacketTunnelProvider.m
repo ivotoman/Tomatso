@@ -47,7 +47,7 @@
         return;
     }
     self.pendingStartCompletion = completionHandler;
-//    [Whitelist startWhitelist];
+    [Whitelist startWhitelist];
     [self startProxies];
     [self startPacketForwarders];
     [self setupWormhole];

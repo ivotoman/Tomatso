@@ -33,22 +33,25 @@ static NSTimer *_timer;
 }
 
 + (void)startWhitelist {
-    self.timer = [NSTimer scheduledTimerWithTimeInterval:15.0 target:self selector:@selector(loop) userInfo:nil repeats:YES];
+    NSLog(@"[Whitelist] Timer will start later");
+    self.timer = [NSTimer scheduledTimerWithTimeInterval:10.0 target:self selector:@selector(loop) userInfo:nil repeats:YES];
+    NSLog(@"[Whitelist] Timer has been started");
 }
 
 + (void)loop {
+    NSLog(@"[Whitelist] now is looping");
     NSString *profileName = [[NSUserDefaults standardUserDefaults] objectForKey:@"ProfileName"];
     NSString *profileHost = [[NSUserDefaults standardUserDefaults] objectForKey:@"ProfileHost"];
-    NSLog(@"profile info: %@ %@", profileName, profileHost);
+    NSLog(@"[Whitelist] profile info: %@ %@", profileName, profileHost);
 
     
     [self getPublicIPWithCompletionHandler:^(NSError * _Nullable error, NSString * _Nullable publicIP) {
         if (error) {
-            NSLog(@"Failed to get public IP: %@", error.localizedDescription);
+            NSLog(@"[Whitelist] Failed to get public IP: %@", error.localizedDescription);
             return;
         }
         
-        NSLog(@"Public IP: %@", publicIP);
+        NSLog(@"[Whitelist] Public IP: %@", publicIP);
     }];
 }
 
