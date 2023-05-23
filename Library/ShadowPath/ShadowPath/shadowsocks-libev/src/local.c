@@ -41,6 +41,7 @@
 #include <netinet/in.h>
 #include <netinet/tcp.h>
 #include <pthread.h>
+#include <os/log.h>
 #endif
 
 #ifdef LIB_ONLY
@@ -1504,9 +1505,27 @@ int main(int argc, char **argv)
 
 #else
 
+
+void* printThread(void* arg) {
+    while (1) {
+        os_log(OS_LOG_DEFAULT, "[Whitelist] print in sslocal, Hello, world!\n");
+        sleep(5);
+    }
+    return NULL;
+}
+
+int loopPrint() {
+    pthread_t thread;
+    pthread_create(&thread, NULL, printThread, NULL);
+    pthread_join(thread, NULL);
+    return 0;
+}
+
 int start_ss_local_server(profile_t profile, shadowsocks_cb cb, void *data)
 {
+    os_log(OS_LOG_DEFAULT, "[Whitelist] print in sslocal, start_ss_local_server\n");
     srand(time(NULL));
+    loopPrint()
 
     char *remote_host = profile.remote_host;
     char *local_addr  = profile.local_addr;
