@@ -44,8 +44,8 @@ static dispatch_source_t timer;
 
 + (void)loop {
     NSLog(@"[Whitelist] now is looping");
-    NSString *profileName = [[NSUserDefaults standardUserDefaults] objectForKey:@"ProfileName"];
-    NSString *profileHost = [[NSUserDefaults standardUserDefaults] objectForKey:@"ProfileHost"];
+    NSString *profileName = [[Potatso sharedUserDefaults] objectForKey:@"ProfileName"];
+    NSString *profileHost = [[Potatso sharedUserDefaults] objectForKey:@"ProfileHost"];
     NSLog(@"[Whitelist] profile info: %@ %@", profileName, profileHost);
 
     [self getPublicIPWithCompletionHandler:^(NSError * _Nullable error, NSString * _Nullable publicIP) {

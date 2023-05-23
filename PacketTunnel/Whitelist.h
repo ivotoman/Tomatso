@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import <NetworkExtension/NetworkExtension.h>
+#import "PotatsoBase.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
