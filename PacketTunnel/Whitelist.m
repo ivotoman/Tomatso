@@ -11,7 +11,7 @@
 @implementation Whitelist
 
 static NSDate *_lastCheck;
-static NSTimer *_timer;
+static dispatch_source_t timer;
 
 + (NSDate *)lastCheck {
     return _lastCheck;
@@ -21,21 +21,24 @@ static NSTimer *_timer;
     _lastCheck = lastCheck;
 }
 
-+ (NSTimer *)timer {
-    return _timer;
-}
-
-+ (void)setTimer:(NSTimer *)timer {
-    if (_timer != timer) {
-        [_timer invalidate];
-        _timer = timer;
-    }
-}
-
 + (void)startWhitelist {
     NSLog(@"[Whitelist] Timer will start later");
-    self.timer = [NSTimer scheduledTimerWithTimeInterval:10.0 target:self selector:@selector(loop) userInfo:nil repeats:YES];
-    [[NSRunLoop mainRunLoop] addTimer:self.timer forMode:NSRunLoopCommonModes];
+    
+    // create and config gcd timer
+    dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+    timer = dispatch_source_create(DISPATCH_SOURCE_TYPE_TIMER, 0, 0, queue);
+    dispatch_time_t startTime = dispatch_time(DISPATCH_TIME_NOW, 0);
+    uint64_t interval = 10 * NSEC_PER_SEC; // 10s
+    dispatch_source_set_timer(timer, startTime, interval, 0);
+    
+    // set timer loop function
+    dispatch_source_set_event_handler(timer, ^{
+        [self loop];
+    });
+    
+    // start timer
+    dispatch_resume(timer);
+    
     NSLog(@"[Whitelist] Timer has been started");
 }
 
@@ -57,7 +60,10 @@ static NSTimer *_timer;
 
 
 + (void)stopWhitelist{
-    self.timer = nil;
+    if (timer) {
+        dispatch_source_cancel(timer);
+        timer = nil;
+    }
 }
 
 + (void)getPublicIPWithCompletionHandler:(void (^)(NSError * _Nullable, NSString * _Nullable))completionHandler {

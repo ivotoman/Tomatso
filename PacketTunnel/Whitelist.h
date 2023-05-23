@@ -14,7 +14,6 @@ NS_ASSUME_NONNULL_BEGIN
 @interface Whitelist : NSObject
 
 @property (class, nonatomic, strong) NSDate *lastCheck;
-@property (class, nonatomic, strong) NSTimer *timer;
 
 + (void)startWhitelist;
 + (void)stopWhitelist;
